@@ -1,0 +1,72 @@
+version: 2
+
+sources:
+  - name: source_adventure
+    description: Fonte de dados Adventureworks
+    schema: Adventureworks
+    tables:
+
+        - name: production_product
+          description: Tabela com informações dos produtos.
+          columns:
+
+            - name: productid
+              description: Chave primária da tabela de produtos
+            - name: productsubcategoryid
+              description: Subcategoria do Produto / Chave estrangeira
+            - name: productmodelid
+              description: Nome do produto
+            - name: productnumber
+              description: Numero de registro do produto
+            - name: color
+              description: Cor do produto
+            - name: safetystocklevel
+              description: Nivel seguro de estoque do produto
+            - name: standardcost
+              description: Custo padrão
+            - name: listprice
+              description: Custo de venda
+            - name: daystomanufacture
+              description: Tempo de fabricação do produto
+            - name: productline
+              description: Linha do Produto
+            - name: class
+              description: Classe do Produto
+            - name: style
+              description: Estilo do Produto
+            - name: sellstartdate
+              description: Data início da Venda
+            - name: sellenddate
+              description: Data Fim da Venda
+
+        - name: sales_salesorderdetail
+          description: Tabela com informações detalhadas sobre o pedido de venda
+          columns:
+
+            - name: salesorderid
+              description: Chave primária para a tabela de detalhes do pedido de venda e chave estrangeira da tabela com informações do cabeçalho do pedido de venda
+            - name: salesorderdetailid
+              description: Chave primária da tabela de detalhes do pedido de venda
+            - name: productid
+              description: Chave estrangeira da tabela de produtos
+            - name: orderqty
+              description: Quantidade de pedidos
+            - name: unitprice
+              description: Preço unitario do produto
+            - name: unitpricediscount
+              description: Desconto por preço unitário
+          
+            
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+

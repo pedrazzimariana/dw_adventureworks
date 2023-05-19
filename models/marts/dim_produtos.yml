@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: dim_produtos
+    columns:
+      - name: sk_produto
+        description: Chave surrogate da tabela.
+        tests:
+          - unique
+          - not_null
+          
+      - name: produtos.id_produto
+        description: Chave primaria da tabela produtos
+      - name: produtos.prod_id_subcategoria
+        description: Chave primaria da tabela subcategoria de produtos
+      - name: produtos.prod_nome
+        description: Informação do nome dos produtos
+      - name: produtos.prod_codigo
+        description: codigo do produto
+      - name: produtos.prod_cor	
+        description: cor do produto
+      - name: produtos.prod_estoque
+        description: nivel seguro de estoque do produto
+      - name: produtos.prod_custo_producao
+        description: custo de produção do produto
+      - name: produtos.prod_custo_venda
+        description: valor de venda do produto	
+      - name: produtos.prod_linha
+        description: linha do produto
+      - name: produtos.prod_classe
+        description: classe do produto		
+      - name: produtos.vendaprod_data_inicio
+        description: data início da venda 
+      - name: produtos.vendaprod_data_fim
+        description: data fim da venda	
+      - name: ordem_pedido_venda.id_pedido
+        description: data fim da venda			
+      - name: ordem_pedido_venda.id_detalhe_pedido
+        description: chave primaria da ordem do pedido de venda
+      - name: ordem_pedido_venda.qtde_pedido
+        description: quantidade de pedidos feitos		
+      - name: ordem_pedido_venda.pedido_id_produto
+        description: chave estrageira do id produto
+      - name: ordem_pedido_venda.valor_unitario
+        description: valor unitario do produto
+      - name: ordem_pedido_venda.desconto_valorunit
+        description: desconto do valor unitario
