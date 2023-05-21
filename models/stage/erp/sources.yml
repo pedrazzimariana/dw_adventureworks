@@ -171,8 +171,56 @@ sources:
               description: Chave estrangeira para a tabela com informações sobre a loja
             - name: territoryid 
               description: chave estrangeira para a tabela de território  
-            
-            
+
+        - name: person_address
+          description: Tabela com informações de endereco
+          columns:
+
+            - name: addressid
+              description: Chave primaria da tabela de endereco
+              tests:
+                - unique
+                - not null  
+            - name: addressline1
+              description: Informações sobre o endereço 
+            - name: addressline2
+              description: Informações complementares do endereço 
+            - name: city
+              description: Cidade correspondente do endereço
+            - name: stateprovinceid
+              description: chave estrangeira da tabela estado
+            - name: spatiallocation
+              description: informações sobre a localicação espacial  
+
+        - name: person_stateprovince
+          description: Tabela com informações de cidade
+          columns:
+
+            - name: stateprovinceid
+              description: Chave primaria da tabela estado
+              tests:
+                - unique
+                - not null  
+            - name: stateprovincecode
+              description: Código do estado
+            - name: countryregioncode
+              description: Código da região estado - país   
+            - name: name
+              description: Nome do Estado 
+            - name: territoryid
+              description: chave estrangeira da tabela territorio 
+
+        - name: person_countryregion
+          description: Tabela com informações de Estado - País
+          columns:
+
+            - name: countryregioncode
+              description: Chave primaria / Código do Estado - País
+              tests:
+                - unique
+                - not null  
+            - name: name
+              description: Nome do Estado-País
 
             
 
