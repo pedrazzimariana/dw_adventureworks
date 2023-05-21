@@ -10,7 +10,7 @@ with
             , cast(addressline1 as string) as endereco					
             , cast(addressline2 as string) as complemento_endereco					
             , cast(city as string) as cidade			
-            , cast(stateprovinceid	as int) as fk_estado					
+            , cast(stateprovinceid as int) as fk_estado					
             , cast(spatiallocation as string) as localizacao_espacial																						    
     from fonte_endereco
 )
