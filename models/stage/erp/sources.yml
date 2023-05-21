@@ -55,7 +55,84 @@ sources:
               description: Preço unitario do produto
             - name: unitpricediscount
               description: Desconto por preço unitário
+
+        - name: sales_salesorderheader
+          description: Tabela com informações do cabeçalho do pedido de venda
+          columns:
+
+            - name: salesorderid
+              description: Chave primaria e estrangeira da tabela de detalhes do pedido de venda
+              tests:
+                - unique
+                - not null
+            - name: orderdate
+              description: Data do pedido da venda
+            - name: duedate
+              description: Data em que o pedido é devido ao cliente				
+            - name: shipdate
+              description: Informação de data que o pedido é enviado ao cliente
+            - name: status
+              description: Informação sobre status atual do pedido (1= In process, 2= Approved, 3= BackOrdered, 4= Rejected, 5= Shipped, 6= Cancelled)
+            - name: customerid
+              description: chave estrangeira - id do cliente
+            - name: salespersonid
+              description: chave estrangeira - id do vendedor
+            - name: territoryid
+              description: chave estrangeira - id territorio de venda  
+            - name: creditcardid
+              description: Id - Informações de cartão de crédito			
+            - name: orderdate
+              description: Informação de data que o pedido de venda foi criado.				
+            - name: shiptoaddressid
+              description: Chave estrangeira - Id do endereço de envio do pedido.
+            - name: shipmethodid
+              description: Chave estrangeira - Id do metodo de envio.	
+            - name: subtotal
+              description: Informação referente ao subtotal, desconsiderando imposto e frete				
+            - name: taxamt
+              description: Valor de imposto
+            - name: freight
+              description: valor de frete 			
+            - name: totaldue
+              description: Total devido, considerando valor de imposto e frete							
+
+        - name: sales_salesreason
+          description: Tabela com informações do motivo da venda
+          columns:
+
+            - name: salesreasonid
+              description: Chave primaria da tabela de motivos de venda
+              tests:
+                - unique
+                - not null  
+            - name: name
+              description: motivo da venda
+            - name: reasontype
+              description: Categoria a qual se enquadra o motivo
+        
+        - name: sales_creditcard
+          description: Tabela com informações do tipo de cartao
+          columns:
+
+            - name: creditcardid
+              description: Chave primaria da tabela de cartao de credito
+              tests:
+                - unique
+                - not null  
+            - name: cardtype
+              description: Tipo de cartao de credito
           
+        - name: sales_salesorderheadersalesreason
+          description: Tabela com informações de ordem de pedido venda com motivo de venda
+          columns:
+
+            - name: salesorderid
+              description: Chave primaria e estrangeira da ordem do pedido de venda
+              tests:
+                - unique
+                - not null  
+            - name: salesreasonid
+              description: Chve primaria e estrangeira para identificação do motivo de venda
             
             
             

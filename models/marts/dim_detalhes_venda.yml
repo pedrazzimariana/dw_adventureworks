@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: dim_detalhes_venda
+    columns:
+      - name: sk_pedido_venda
+        description: Chave surrogate da tabela.
+        tests:
+          - unique
+          - not_null
+          
+      - name: detalhe_pedido_venda.id_pedido_venda
+        description: Chave primaria da tabela detalhes da venda
+      - name: detalhe_pedido_venda.data_pedido
+        description: Data do pedido da venda
+      - name: detalhe_pedido_venda.data_vencimento_pedido
+        description: Data de vencimento do pedido
+      - name: detalhe_pedido_venda.data_envio_pedido
+        description: Data referente ao envio do pedido	
+      - name: detalhe_pedido_venda.status_pedido
+        description: informações quanto ao status do pedido 		
+      - name: detalhe_pedido_venda.fk_cliente
+        description: chave estrangeira para a tabela de informações dos clientes			
+      - name: detalhe_pedido_venda.fk_vendedor
+        description: chave estrangeira para a tabela com infromações dos vendedores			
+      - name: detalhe_pedido_venda.fk_territorio
+        description: chave estrangeira para a tabela de informações sobre território de venda		
+      - name: detalhe_pedido_venda.id_endereco_envio
+        description: identificação para indereço de envio do pedido
+      - name: detalhe_pedido_venda.fk_metodo_envio
+        description: informações sobre o método de envio do pedido ao cliente 	
+      - name: detalhe_pedido_venda.fk_cartao_credito
+        description: chave estrangeira para a tabela com informações do tipo de cartão de credito utilizado na compra
+      - name: detalhe_pedido_venda.subtotal
+        description: Informação referente ao subtotal, desconsiderando imposto e frete
+      - name: detalhe_pedido_venda.imposto	
+        description: valor o imposto cobrado		
+      - name: detalhe_pedido_venda.frete
+        description: informação sobre o valor de frete do envio 		
+      - name: detalhe_pedido_venda.total_devido
+        description: valor total devido da venda
+      - name: motivo_venda.id_motivo_venda
+        description: chave primaria do motivo de venda	
+      - name: motivo_venda.motivo_venda
+        description: nome do motivo de venda		
+      - name: motivo_venda.categoria_motivo
+        description: informações sobre a categoria a qual o motivo se enquadra	
+      - name: cartao_credito.id_cartao_credito
+        description: chave primaria para a tabela do tipo de cartao de credito
+      - name: cartao_credito.tipo_cartao
+        description: informaçoes sobre os tipos de cartao de credito utilizado 
+      - name: ordem_pedido_venda.idmotivo_pedido_venda
+        description: chave primaria e estrangeira com a informação do pedido de venda	
+      - name: ordem_pedido_venda.fk_motivo_venda
+        description: chave estrangeira para a tabela de motivo de venda		
