@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_regiao
+    columns:
+      - name: sk_endereco
+        description: Chave surrogate da tabela endereço.
+        tests:
+          - unique
+          - not_null
+          
+      - name: endereco.id_endereco
+        description: Chave primaria da tabela endereço
+      - name: endereco.endereco	
+        description: Descrição do endereço		
+      - name: endereco.complemento_endereco
+        description: Informações complementares do endereço
+      - name: endereco.cidade
+        description: cidade correspondente
+      - name: endereco.fk_estado
+        description: Chave estrangeira para a tabela de estado
+      - name: endereco.localizacao_espacial
+        description: Informações quanto a localicação espacial do endereço
+      - name: estado.id_estado
+        description: Chave primária da tabela de estado
+      - name: estado.cod_estado
+        description: Código do nome do Estado
+      - name: estado.codfk_estado_pais
+        description: Chave estrangeira / codigo do Estado Pais
+      - name: estado.nome_estado
+        description: Nome do Estado
+      - name: estado.fk_territorio
+        description: Chave estranegira para a tabela de territorio
+      - name: estado_pais.codid_estado_pais
+        description: Chave primaria/código do estado-país
+      - name: estado_pais.nome_estado_pais
+        description: Nome do Estado - País
