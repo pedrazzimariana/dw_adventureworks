@@ -132,11 +132,45 @@ sources:
                 - unique
                 - not null  
             - name: salesreasonid
-              description: Chve primaria e estrangeira para identificação do motivo de venda
+              description: Chave primaria e estrangeira para identificação do motivo de venda
             
-            
-            
-            
+        - name: person_person
+          description: Tabela com informações de pessoas de negocio
+          columns:
+
+            - name: businessentityid
+              description: Chave primaria da tabela de pessoal
+              tests:
+                - unique
+                - not null  
+            - name: persontype
+              description: Tipo de pessoal (SC=Store Contact; IN=Individual(retail) customer; SP=Sales Person; EM=Employee(non-sales); VC=Vendor Contact; GC=General Contact)  
+            - name: title
+              description: Titulação do nome
+            - name: firstname
+              description: Primeiro nome
+            - name: middlename
+              description: Nome do meio
+            - name: lastname
+              description: ultimo nome
+            - name: suffix
+              description: sufixo do ultimo nome - quanto houver
+
+        - name: sales_customer
+          description: Tabela com informações dos clientes
+          columns:
+
+            - name: customerid
+              description: Chave primaria da tabela de cliente
+              tests:
+                - unique
+                - not null  
+            - name: personid
+              description: Chave estrangeira para a tabela informações pessoais 
+            - name: storeid
+              description: Chave estrangeira para a tabela com informações sobre a loja
+            - name: territoryid 
+              description: chave estrangeira para a tabela de território  
             
             
 

@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    columns:
+      - name: sk_clientes
+        description: Chave surrogate da tabela clientes.
+        tests:
+          - unique
+          - not_null
+          
+      - name: clientes.id_cliente
+        description: Chave primaria da tabela clientes
+      - name: clientes.fk_entidade_negocio
+        description: Chave estrangeira para a tabela info_pessoal
+      - name: clientes.fk_loja
+        description: chave estrangeira para a tabela loja
+      - name: clientes.fk_territorio
+        description: chave estrangeira para a tabela de territorio
+      - name: info_pessoal.id_entidade_negocio
+        description: chave primaria da tabela de info_pessoal
+      - name: info_pessoal.categoria
+        description: Tipo de pessoal (SC=Store Contact; IN=Individual(retail) customer; SP=Sales Person; EM=Employee(non-sales); VC=Vendor Contact; GC=General Contact)		
+      - name: info_pessoal.titulo_nome
+        description: Titulação do nome
+      - name: info_pessoal.primeiro_nome
+        description: Primeiro nome
+      - name: info_pessoal.nome_meio
+        description: Nome do meio
+      - name: info_pessoal.ultimo_nome
+        description: ultimo nome
+      - name: info_pessoal.sufixo_nome
+        description: sufixo do nome 
