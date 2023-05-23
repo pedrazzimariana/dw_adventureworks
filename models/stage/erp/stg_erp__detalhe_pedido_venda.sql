@@ -6,17 +6,17 @@ with
 
     , rev_detalhe_pedido_venda as (
         select
-            cast(salesorderid as numeric) as id_pedido_venda										
+            cast(salesorderid as numeric) as id_pedido_venda
+            , cast(customerid as int) as id_cliente					
+            , cast(salespersonid as int) as id_vendedor					
+            , cast(territoryid as int) as id_territorio						
+            , cast(shiptoaddressid as int) as id_endereco_envio				
+            , cast(shipmethodid	as int) as id_metodo_envio				
+            , cast(creditcardid	as int)	as id_cartao_credito										
             , cast(orderdate as timestamp) as data_pedido					
             , cast(duedate as timestamp) as data_vencimento_pedido						
             , cast(shipdate as timestamp) as data_envio_pedido				
-            , cast(status as int) as status_pedido												
-            , cast(customerid as int) as fk_cliente					
-            , cast(salespersonid as int) as fk_vendedor					
-            , cast(territoryid as int) as fk_territorio						
-            , cast(shiptoaddressid as int) as id_endereco_envio				
-            , cast(shipmethodid	as int) as fk_metodo_envio				
-            , cast(creditcardid	as int)	as fk_cartao_credito													
+            , cast(status as int) as status_pedido																									
             , cast(subtotal	as numeric)	as subtotal				
             , cast(taxamt as numeric) as imposto						
             , cast(freight as numeric) as frete				

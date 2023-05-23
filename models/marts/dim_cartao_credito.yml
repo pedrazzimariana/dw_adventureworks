@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_cartao_credito
+    columns:
+      - name: sk_cartao_credito
+        description: Chave surrogate da tabela clientes.
+        tests:
+          - unique
+          - not_null
+          
+      - name: cartao_credito.id_cartao_credito
+        description: Chave primaria da tabela cartao de credito
+      - name: cartao_credito.tipo_cartao
+        description: Informasções do tipo de cartao de credito

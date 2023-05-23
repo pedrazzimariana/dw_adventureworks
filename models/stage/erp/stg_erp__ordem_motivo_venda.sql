@@ -6,8 +6,8 @@ with
 
     , rev_ordem_motivo_venda as (
         select
-            cast(salesorderid as numeric) as idmotivo_pedido_venda									
-            , cast(salesreasonid as int) as fk_motivo_venda																	    
+            cast(salesorderid as numeric) as id_pedido_venda									
+            , cast(salesreasonid as int) as id_motivo_venda																	    
     from fonte_ordem_motivo_venda
 )
 

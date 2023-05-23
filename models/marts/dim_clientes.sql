@@ -11,20 +11,19 @@ with
 
     , joining_clientes as (
         select
-            row_number() over (order by info_pessoal.id_entidade_negocio) as sk_entidade_negocio -- auto-incremental surrogate key
-            , clientes.id_cliente		
-            , clientes.fk_entidade_negocio
-            , clientes.fk_loja
-            , clientes.fk_territorio
-            , info_pessoal.id_entidade_negocio
+            row_number() over (order by clientes.id_cliente) as sk_cliente -- auto-incremental surrogate key
+            , clientes.id_cliente
+            , clientes.id_entidade_negocio		
+            , clientes.id_loja
+            , clientes.id_territorio
             , info_pessoal.categoria			
             , info_pessoal.titulo_nome
             , info_pessoal.primeiro_nome
             , info_pessoal.nome_meio
             , info_pessoal.ultimo_nome
             , info_pessoal.sufixo_nome 					
-        from info_pessoal
-        inner join clientes on clientes.fk_entidade_negocio = info_pessoal.id_entidade_negocio
+        from clientes
+        inner join info_pessoal on clientes.id_entidade_negocio = info_pessoal.id_entidade_negocio
     )
 
 select *
