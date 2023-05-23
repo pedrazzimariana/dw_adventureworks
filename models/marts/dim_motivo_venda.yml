@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_motivo_venda
+    columns:
+      - name: sk_motivo_venda
+        description: Chave surrogate da tabela.
+        tests:
+          - unique
+          - not_null
+          
+      - name: motivo_venda.id_motivo_venda
+        description: chave primaria do motivo de venda	
+      - name: motivo_venda.motivo_venda
+        description: nome do motivo de venda		
+      - name: motivo_venda.categoria_motivo
+        description: informações sobre a categoria a qual o motivo se enquadra	

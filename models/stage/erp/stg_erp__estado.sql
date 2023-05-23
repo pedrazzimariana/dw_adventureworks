@@ -8,9 +8,9 @@ with
         select
             cast(stateprovinceid as int) as id_estado				
             , cast(stateprovincecode as string) as cod_estado		
-            , cast(countryregioncode as string) as codfk_estado_pais					
+            , cast(countryregioncode as string) as cod_estado_pais					
             , cast(name as string) as nome_estado		
-            , cast(territoryid as int) as fk_territorio																						    
+            , cast(territoryid as int) as id_territorio																						    
     from fonte_estado
 )
 

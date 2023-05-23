@@ -7,9 +7,9 @@ with
     , rev_cliente as (
         select
             cast(customerid as int) as id_cliente					
-            , cast(personid as int) as fk_entidade_negocio										
-            , cast(storeid as int) as fk_loja
-            , cast(territoryid as int) as fk_territorio													    
+            , cast(personid as int) as id_entidade_negocio										
+            , cast(storeid as int) as id_loja
+            , cast(territoryid as int) as id_territorio													    
     from fonte_cliente
 )
 

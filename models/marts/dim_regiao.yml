@@ -17,7 +17,7 @@ models:
         description: Informações complementares do endereço
       - name: endereco.cidade
         description: cidade correspondente
-      - name: endereco.fk_estado
+      - name: endereco.id_estado
         description: Chave estrangeira para a tabela de estado
       - name: endereco.localizacao_espacial
         description: Informações quanto a localicação espacial do endereço
@@ -25,11 +25,11 @@ models:
         description: Chave primária da tabela de estado
       - name: estado.cod_estado
         description: Código do nome do Estado
-      - name: estado.codfk_estado_pais
+      - name: estado.cod_estado_pais
         description: Chave estrangeira / codigo do Estado Pais
       - name: estado.nome_estado
         description: Nome do Estado
-      - name: estado.fk_territorio
+      - name: estado.id_territorio
         description: Chave estranegira para a tabela de territorio
       - name: estado_pais.codid_estado_pais
         description: Chave primaria/código do estado-país
